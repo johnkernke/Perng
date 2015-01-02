@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PERNG</title>
+    <link href="./style.css" rel="stylesheet">
+  </head>
+  <body>
+    <h1>PERNG<small>By <a href="http://github.com/johnkernke" target="_blank">John Kernke</a></small></h1>
+    <table width="100%">
+      <tr>
+          <td id="score-1">&nbsp;</td>
+          <td id="score-2">&nbsp;</td>
+        </tr>
+        <tr>
+          <td class="score-btn">
+            <button id="score-1-up">+</button>
+            <button id="score-1-down">-</button>
+          </td>
+          <td class="score-btn">
+            <button id="score-2-up">+</button>
+            <button id="score-2-down">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="score-1-serving">&nbsp;</td>
+          <td id="score-2-serving">&nbsp;</td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <button class="block" id="reset-score">Reset</button>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            Score Limit:
+            <select id="score-limit">
+              <option value="10">10</option>
+              <option value="20">20</option>
+            </select>
+          </td>
+        </tr>
+      </table>
+    <script src="./perng.js"></script>
+  </body>
+</html>

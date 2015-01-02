@@ -1,0 +1,87 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #222;
+  color: #fff;
+  font-family: "Helvetica Neue", Verdana, Arial, sans-serif;
+  font-size: 20pt;
+}
+
+h1 {
+  margin-bottom: 0;
+  text-align: center;
+}
+
+h1 small {
+  color: #888;
+  font-size: 12pt;
+}
+
+h1 a:link,
+h1 a:visited {
+  color: #ccc;
+  text-decoration: underline;
+}
+
+h1 a:hover {
+  color: #2d92c4;
+}
+
+button {
+  background: #2d92c4;
+  border: 0;
+  border-radius: 4px;
+  color: #fff;
+  display: block;
+  font-size: 20pt;
+  height: 80px;
+  line-height: 80px;
+  padding: 0 30px;
+  text-decoration: none;
+  width: 100%;
+}
+
+button:active {
+  box-shadow: 0 0 10px 0 rgba(0,0,0,.5) inset;
+}
+
+.score-btn button {
+  float: left;
+  width: 50%;
+}
+
+.score-btn button:first-of-type {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.score-btn button:last-of-type {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+button:focus {
+  outline: 0;
+}
+
+table tr td {
+  width: 50%;
+  height: 85px;
+  text-align: center;
+}
+
+select {
+  font-size: 20pt;
+}
+
+.winner {
+  color: #0a0;
+}
+
+.loser {
+  color: #a00;
+}
