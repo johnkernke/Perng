@@ -39,7 +39,7 @@
 
       // determine server
       if (!won) {
-        draw_server(Math.floor(total_score / 2) % 2 == (server - 1) ? 1 : 2);
+        draw_server(Math.floor(total_score / 2) % 5 == (server - 1) ? 1 : 2);
       }
     } else {
       // determine winner when above score limit (2 points ahead)
