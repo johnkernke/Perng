@@ -2,6 +2,7 @@
   var score_limit = 10,
     scores = [0, 0],
     server = 0,
+    server_serves = 2,
     won = false,
     el_scores = [document.querySelector('#score-1'), document.querySelector('#score-2')],
     el_scores_serv = [document.querySelector('#score-1-serving'), document.querySelector('#score-2-serving')];
@@ -39,7 +40,9 @@
 
       // determine server
       if (!won) {
-        draw_server(Math.floor(total_score / 2) % 5 == (server - 1) ? 1 : 2);
+        var serv = Math.floor(total_score / 2) % server_serves == (server - 1);
+        console.log("server",serv);
+        draw_server(serv ? 1 : 2);
       }
     } else {
       // determine winner when above score limit (2 points ahead)
@@ -53,8 +56,9 @@
 
       // determine server (when above score limit, 1 serve each)
       if (!won) {
-        console.log('server..',total_score % 2,server - 1);
-        draw_server(total_score % 5 == (server - 1) ? 1 : 2);
+        var serv = total_score % server_serves == (server - 1);
+        console.log("server end",serv);
+        draw_server(serv ? 1 : 2);
       }
     }
   }
@@ -139,6 +143,10 @@
 
   bind(document.querySelector('#score-limit'), 'change', function () {
     score_limit = this.value;
+  });
+  
+  bind(document.querySelector('#server-serves'), 'change', function () {
+    server_serves = this.value;
   });
 
   change_score(1, 0); // init the board
