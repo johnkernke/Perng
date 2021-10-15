@@ -48,8 +48,6 @@
 
       // determine server
       if (!won) {
-        var serv = total_score % server_serves;
-        console.log("server",serv);
         draw_server(server);
         if (total_score % server_serves == server_serves - 1) {
           swap_server();
@@ -67,9 +65,8 @@
 
       // determine server (when above score limit, 1 serve each)
       if (!won) {
-        var serv = total_score % server_serves == (server - 1);
-        console.log("server end",serv);
-        draw_server(serv ? 1 : 2);
+        draw_server(server);
+        swap_server();
       }
     }
   }
