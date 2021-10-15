@@ -7,6 +7,14 @@
     el_scores = [document.querySelector('#score-1'), document.querySelector('#score-2')],
     el_scores_serv = [document.querySelector('#score-1-serving'), document.querySelector('#score-2-serving')];
 
+  function swap_server() {
+    if (server == 1) {
+      server = 2;
+    } else if (server == 2) {
+      server = 1;
+    }
+  }
+
   function change_score(player, delta) {
     var _player = player - 1,
       total_score = 0;
@@ -40,9 +48,12 @@
 
       // determine server
       if (!won) {
-        var serv = Math.floor(total_score / 2) % server_serves == (server - 1);
+        var serv = total_score % server_serves;
         console.log("server",serv);
-        draw_server(serv ? 1 : 2);
+        draw_server(server);
+        if (total_score % server_serves == server_serves - 1) {
+          swap_server();
+        }
       }
     } else {
       // determine winner when above score limit (2 points ahead)
@@ -147,6 +158,7 @@
   
   bind(document.querySelector('#server-serves'), 'change', function () {
     server_serves = this.value;
+    console.log(server_serves);
   });
 
   change_score(1, 0); // init the board
