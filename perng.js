@@ -54,7 +54,7 @@
       // determine server (when above score limit, 1 serve each)
       if (!won) {
         console.log('server..',total_score % 2,server - 1);
-        draw_server(total_score % 2 == (server - 1) ? 1 : 2);
+        draw_server(total_score % 5 == (server - 1) ? 1 : 2);
       }
     }
   }
